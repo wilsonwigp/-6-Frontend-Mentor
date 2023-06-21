@@ -1,0 +1,124 @@
+
+/*
+- Mobile: 375px
+- Desktop: 1440px
+
+- Font size: 15px
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+:root{
+    /*Primary*/
+--Very_dark_blue: hsl(233, 47%, 7%);
+/*main background*/
+--Dark_desaturated_blue: hsl(244, 38%, 16%);
+/*card background*/
+--Soft_violet: hsl(277, 64%, 61%);
+/*acent*/
+/*Neutral*/
+--White: hsl(0, 0%, 100%);
+/*(main heading, stats)*/
+--Slightly_transparent_white: hsla(0, 0%, 100%, 0.75);
+/* (main paragraph)*/
+--Slightly_transparent_white: hsla(0, 0%, 100%, 0.6);
+/* (stat headings)*/
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--Very_dark_blue);
+    font-family: "Inter","Lexend Deca",sans-serif;
+    min-height: 100vh;
+    max-width:100%;
+    display: flex;
+    align-items: center;
+}
+.main{
+    margin:0 auto;
+    max-width: 1020px;
+}
+.container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    margin:0 16px;
+}
+.left-card{
+    background-color: var(--Dark_desaturated_blue);
+    display:flex;
+    flex-direction: column;
+    border-radius:10px 0 0 10px;
+}
+.right-card{
+    border-radius: 0 10px 10px 0;
+    background: var(--Soft_violet);
+    overflow: hidden;
+}
+.right-card img{
+    opacity:0.6;
+    background: var(--Soft_violet);
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+.title{
+    color:white;
+    margin:40px 60px 30px 40px;
+    font-size: 36px;
+    font-weight: 700;
+
+}
+.title span{
+    color:var(--Soft_violet);
+}
+.description{
+    color:var(--Slightly_transparent_white);
+    margin:0px 60px 20px 40px;
+    line-height: 25px;
+    font-size:16px;
+}
+.min-container{
+    margin:40px 90px 40px 40px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--White);
+}
+.mincard h5{
+    margin-top:10px;
+    margin-bottom:20px;
+    font-weight: 400;
+    color:var(--Slightly_transparent_white);
+}
+@media (max-width:725px){
+    body{
+        text-align: center;
+    }
+    .container{
+        display:flex;
+        flex-direction: column-reverse;
+        border-radius: 10px;
+    }
+    .right-card{
+        border-radius: 10px 10px 0 0 ;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .left-card{
+        border-radius: 0 0 10px 10px;
+    }
+    .min-container{
+        margin-top:20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .title{
+        font-size:22px;
+        margin-bottom:15px;
+    }
+    .description{
+        font-size: 12px;
+    }
+}
